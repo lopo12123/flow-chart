@@ -2,13 +2,17 @@
   "name": "flow-chart",
   "private": true,
   "version": "0.0.0",
+  "main": "./shell.ts",
+  "homepage": "./",
   "scripts": {
     "pregojs": "node ./pregojs/js",
     "dev:single": "vite --host --open",
+    "dev:electron": "electron .",
     "build": "tsc && vite build"
   },
   "dependencies": {
     "crypto-js": "^4.1.1",
+    "electron": "^18.0.1",
     "gojs": "^2.2.5",
     "primeicons": "^5.0.0",
     "primereact": "^7.2.1",
