@@ -1,14 +1,15 @@
 {
   "name": "flow-chart",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1-web",
   "main": "./shell.ts",
   "homepage": "./",
   "scripts": {
-    "pregojs": "node ./pregojs/js",
+    "postinstall": "node ./pregojs.js",
+    "pregojs": "node ./pregojs.js",
     "dev:single": "vite --host --open",
     "dev:electron": "electron .",
-    "build": "tsc && vite build"
+    "build:single": "tsc && vite build"
   },
   "dependencies": {
     "crypto-js": "^4.1.1",
