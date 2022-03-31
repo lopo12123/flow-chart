@@ -1,0 +1,1 @@
+yarn config set electron_mirror https://npm.taobao.org/mirrors/electron/
