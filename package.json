@@ -3,8 +3,8 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite --host",
-    "dev:single": "vite --config single.config.ts",
+    "pregojs": "node ./pregojs/js",
+    "dev:single": "vite --host --open",
     "build": "tsc && vite build"
   },
   "dependencies": {
