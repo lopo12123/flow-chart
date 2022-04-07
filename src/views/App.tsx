@@ -2,9 +2,8 @@ import FlowChart from "@flowChart/views/FlowChart";
 import Styles from "@flowChart/styles/navbar.module.scss"
 
 export const App = () => {
-    const doOperate = (type: 'min' | 'max' | 'close') => {
-
-    }
+    // @ts-ignore
+    const sendOperateIpc = window.customApis?.sendOperateIpc ?? (() => {})
 
     return (
         <div style={ {
@@ -21,9 +20,9 @@ export const App = () => {
                     <i>i</i>`<b>m</b> <u>l</u><b>o</b>g<b>o</b>
                 </div>
                 <div className={Styles.btnGroup}>
-                    <div className={Styles.btn}><i className="pi pi-window-minimize"/></div>
-                    <div className={Styles.btn}><i className="pi pi-window-maximize"/></div>
-                    <div className={Styles.btn}><i className="pi pi-times"/></div>
+                    <div className={Styles.btn} onClick={() => sendOperateIpc('min')}><i className="pi pi-window-minimize"/></div>
+                    <div className={Styles.btn} onClick={() => sendOperateIpc('max')}><i className="pi pi-window-maximize"/></div>
+                    <div className={Styles.btn} onClick={() => sendOperateIpc('close')}><i className="pi pi-times"/></div>
                 </div>
             </div>
             <div style={ {
