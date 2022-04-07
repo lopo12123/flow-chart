@@ -5,11 +5,11 @@ import "./styles/index.scss";
 
 import { StrictMode } from "react";
 import { render } from "react-dom";
-import FlowChart from "@flowChart/views/FlowChart";
+import { App } from "@flowChart/views/App";
 
 render(
     <StrictMode>
-        <FlowChart/>
+        <App/>
     </StrictMode>,
     document.getElementById('root')
 )

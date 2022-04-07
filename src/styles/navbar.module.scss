@@ -1,0 +1,50 @@
+.app {
+    position: relative;
+    width: calc(100% - 20px);
+    height: 39px;
+    padding: 0 10px;
+    border-bottom: solid 1px #aaaaaa;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    -webkit-app-region: drag;
+
+    &:active {
+        cursor: move;
+    }
+
+    .logo {
+        font-family: "Ink Free";
+    }
+
+    .btn-group {
+        position: relative;
+        width: fit-content;
+        height: 39px;
+        color: #777777;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        -webkit-app-region: no-drag;
+
+        .btn {
+            margin: 0 5px;
+            &:hover {
+                cursor: pointer;
+                animation: blink 3s linear infinite;
+            }
+        }
+    }
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1
+    }
+    50% {
+        opacity: 0
+    }
+    100%{
+        opacity: 1
+    }
+}
