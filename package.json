@@ -15,15 +15,22 @@
         "dev:single": "vite --host --open",
         "build:single": "tsc && vite build",
         "dev:electron": "set NODE_ENV=dev&&electron .",
-        "build:electron": "set NODE_ENV=prod&&tsc && vite build && electron-builder"
+        "build:electron": "set NODE_ENV=prod&&electron-builder"
     },
     "build": {
         "appId": "com.lopo12123.flow-chart",
         "productName": "flow-chart",
         "copyright": "Copyright © 2022 lopo12123",
+        "win": {
+            "icon": "./dist_electron/icons/icon.ico"
+        },
         "nsis": {
             "oneClick": false,
-            "allowToChangeInstallationDirectory": true
+            "allowElevation": true,
+            "allowToChangeInstallationDirectory": true,
+            "installerIcon": "./dist_electron/icons/icon.ico",
+            "uninstallerIcon": "./dist_electron/icons/icon.ico",
+            "installerHeaderIcon": "./dist_electron/icons/icon.ico"
         },
         "files": [
             "dist/**/*",
@@ -36,7 +43,6 @@
     },
     "dependencies": {
         "crypto-js": "^4.1.1",
-        "electron": "^18.0.1",
         "gojs": "^2.2.5",
         "primeicons": "^5.0.0",
         "primereact": "^7.2.1",
@@ -53,6 +59,7 @@
         "@types/react-dom": "^17.0.10",
         "@types/uuid": "^8.3.4",
         "@vitejs/plugin-react": "^1.0.7",
+        "electron": "^18.0.1",
         "electron-builder": "^22.14.13",
         "typescript": "^4.5.4",
         "vite": "^2.8.0"
