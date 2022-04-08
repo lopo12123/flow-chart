@@ -6,8 +6,10 @@ let winRef  // : undefined | BrowserWindow
 
 const createWindow = () => {
     winRef = new BrowserWindow({
-        width: 400,
-        height: 300,
+        width: 800,
+        height: 600,
+        minWidth: 800,
+        minHeight: 600,
         frame: false,
         webPreferences: {
             preload: join(__dirname, './preload.js'),
@@ -21,8 +23,7 @@ const createWindow = () => {
         winRef.webContents.openDevTools()
     }
     else {
-        winRef.loadURL(`file://${join(__dirname, './dist/index.html')}`)
-        // winRef.loadFile('index.html')
+        winRef.loadFile(join(__dirname, '../dist/index.html'))
     }
 }
 
@@ -45,6 +46,9 @@ app.whenReady().then(() => {
                 // `win.close()` is disabled while `frame=false`
                 winRef = null
                 app.exit()
+                break
+            case 'devTool':
+                winRef.webContents.openDevTools()
                 break
         }
     })
